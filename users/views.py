@@ -10,3 +10,11 @@ def users(request):
         'myusers' : myusers,
     }
     return HttpResponse(template.render(context, request))
+
+def details(request, id):
+    myuser = Users.object.get(id=id)
+    template = loader.get_template('details.html')
+    context = {
+        'myuser' : myuser,
+    }
+    return HttpResponse(template.render(context, request))
