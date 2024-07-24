@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "master.html" %}
 
-<body>
+{% block title %}
+  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
 
+{% block content %}
 <h1>{{ myuser.firstname }} {{ myuser.lastname }}</h1>
   
 <p>Phone: {{ myuser.phone }}</p>
@@ -10,5 +12,4 @@
 
 <p>Back to <a href="/users">Users</a></p>
 
-</body>
-</html>
+{% endblock %}
